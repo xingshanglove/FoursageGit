@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_scroll_scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--头部 -->
+        <include layout="@layout/head_contain_back"></include>
+        <!--刷新布局 -->
+        <include
+            layout="@layout/layout_refresh_head"
+            ></include>
+        <!--滑动条 -->
+        <com.lanjiaomao.foursage.view.DynamicViewPager
+            android:id="@+id/dv_host_activie"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="1dp"></com.lanjiaomao.foursage.view.DynamicViewPager>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_active_type"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/tv_active_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="最新活动"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_chose_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/shilter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="筛选"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ccc"></View>
+
+    <ListView
+        android:id="@+id/lv_actives"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#eee"
+        android:scrollbars="none"></ListView>
+</LinearLayout>
