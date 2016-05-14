@@ -25,7 +25,9 @@ public class UserIconDescAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return icons.size() + 1;
+        if (icons.size() < 10)
+            return icons.size() + 1;
+        else return icons.size();
     }
 
     @Override
@@ -50,16 +52,29 @@ public class UserIconDescAdapter extends BaseAdapter {
         }
         if (position < icons.size())
             ImageLoader.getInstance().displayImage(icons.get(position), holder.iv_item_icon);
-        else{
-            holder.iv_item_icon.setImageDrawable(context.getResources().getDrawable(R.mipmap.icon_plus_big));
+        else {
+            holder.iv_item_icon.setImageDrawable(context.getResources().getDrawable(R.mipmap.icon_add));
         }
         return convertView;
     }
 
+    /**
+     * 是否还允许添加图片 最多十张
+     *
+     * @return
+     */
+    public boolean isAddPossibile() {
+        if (icons.size() == 10)
+            return false;
+        else
+            return true;
+    }
+
     class ViewHolder {
         RoundImageView iv_item_icon;
+
         public ViewHolder(View view) {
-            iv_item_icon= (RoundImageView) view.findViewById(R.id.iv_item_icon);
+            iv_item_icon = (RoundImageView) view.findViewById(R.id.iv_item_icon);
         }
     }
 }

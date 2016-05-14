@@ -13,4 +13,9 @@
         <attr name="borderRadius" />
         <attr name="type" />
     </declare-styleable>
+
+    <declare-styleable name="Info_item">
+        <attr name="info_title" format="string"></attr>
+        <attr name="info_content" format="string"></attr>
+    </declare-styleable>
 </resources>

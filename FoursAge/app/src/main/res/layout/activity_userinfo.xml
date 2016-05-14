@@ -3,105 +3,204 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#fff"
+    android:orientation="vertical"
     >
-    <include layout="@layout/layout_contain_back_center"></include>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-        <ImageView
-            android:id="@+id/iv_head_bg"
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@mipmap/icon_1"
-            android:scaleType="fitXY"
-            />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            >
-            <com.lanjiaomao.foursage.view.CircleImageView
-                android:id="@+id/iv_user_icon"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/icon_1"
-                app:border_width="2dp"
-                app:border_color="#fff"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+            android:layout_height="40dp"
+            android:background="@color/app_color">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/iv_user_icon"
-                android:padding="5dp"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/female"
-                    android:layout_marginRight="5dp"
-                    android:layout_gravity="center_vertical"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="23岁"
-                        android:textColor="#fff"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="摩羯座"
-                        android:textColor="#fff"/>
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_top_back"></ImageView>
+
             <TextView
-                android:id="@+id/tv_user_nickname"
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="一起去看海"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:text="川籍"
                 android:textColor="#fff"
-                android:layout_marginBottom="5dp"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/iv_user_icon"
+                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:padding="5dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100m"
-                    android:textColor="#fff"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3小时前"
-                    android:textColor="#fff"
-                    />
-            </LinearLayout>
-        </RelativeLayout>
-    </FrameLayout>
-    <com.lanjiaomao.foursage.view.HorizontalListView
+                android:src="@mipmap/settings"/>
+    </RelativeLayout>
+    <ScrollView
         android:layout_width="match_parent"
-        android:id="@+id/gv_user_desc"
-        android:layout_margin="5dp"
-        android:layout_height="65dp">
-    </com.lanjiaomao.foursage.view.HorizontalListView>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#ccc"></View>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/iv_head_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <com.lanjiaomao.foursage.view.CircleImageView
+                        android:id="@+id/iv_user_icon"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_1"
+                        app:border_color="#fff"
+                        app:border_width="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_user_icon"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:src="@mipmap/female" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="23岁"
+                                android:textColor="#fff" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="摩羯座"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_user_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="一起去看海"
+                        android:textColor="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_user_icon"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100m"
+                            android:textColor="#fff" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3小时前"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </FrameLayout>
+
+            <com.lanjiaomao.foursage.view.HorizontalListView
+                android:id="@+id/gv_user_desc"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_margin="5dp"></com.lanjiaomao.foursage.view.HorizontalListView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+
+            <com.lanjiaomao.foursage.view.Info_item
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:info_title="绑定手机:"
+                app:info_content="18149184677"
+                ></com.lanjiaomao.foursage.view.Info_item>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+
+            <com.lanjiaomao.foursage.view.Info_item
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:info_title="地区:"
+                app:info_content="陕西 西安"
+                ></com.lanjiaomao.foursage.view.Info_item>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+
+            <com.lanjiaomao.foursage.view.Info_item
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:info_title="学校:"
+                app:info_content="西安邮电"
+                ></com.lanjiaomao.foursage.view.Info_item>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+
+            <com.lanjiaomao.foursage.view.Info_item
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:info_title="邮箱:"
+                app:info_content="1840985542qq.com"
+                ></com.lanjiaomao.foursage.view.Info_item>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+            <com.lanjiaomao.foursage.view.Info_item
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:info_title="生日:"
+                app:info_content="1994/05/02"
+                ></com.lanjiaomao.foursage.view.Info_item>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ccc"></View>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

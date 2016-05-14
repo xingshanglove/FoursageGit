@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
 
 import com.lanjiaomao.foursage.R;
 import com.lanjiaomao.foursage.bean.User;
@@ -21,6 +22,8 @@ public class BaseActivity extends Activity{
     public FragmentTransaction transaction;
     public User user;
 
+    public int screenWidth;
+    public int screenHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,19 @@ public class BaseActivity extends Activity{
         fragmentManager=getFragmentManager();
         transaction=fragmentManager.beginTransaction();
 
+        screenWidth=getWindowManager().getDefaultDisplay().getWidth();
+        screenHeight=getWindowManager().getDefaultDisplay().getHeight();
 
     }
 
+    /**
+     * SD卡是否可用
+     * @return
+     */
+    public boolean isExternalEnable(){
+        if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+            return true;
+        }
+        return false;
+    }
 }

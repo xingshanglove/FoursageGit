@@ -154,13 +154,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 transaction.replace(R.id.ll_content,new MessageFragment());
                 transaction.commit();
                 break;
+            case R.id.iv_user_icon:
             case R.id.tv_user_account:
             case R.id.tv_user_school:
                 //用户详细信息页面
                 startActivity(new Intent(HomeActivity.this,UserInfoActivity.class));
-                break;
-            case R.id.iv_user_icon:
-                //查看高清头像或者选择头衔
                 break;
             case R.id.iv_zxing:
                 //二维码
